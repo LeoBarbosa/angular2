@@ -3,9 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeroSearchComponent } from './hero-search.component';
 
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HeroService } from '../hero.service';
-import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from '../message.service';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;
@@ -15,10 +16,12 @@ describe('HeroSearchComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HeroSearchComponent ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule
       ],
       providers: [
-         HeroService
+         HeroService,
+         MessageService
       ]
     })
     .compileComponents();
